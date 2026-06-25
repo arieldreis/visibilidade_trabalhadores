@@ -2,10 +2,21 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import cors from 'cors'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  async function fetchAPI (URL) {
+    const response = await fetch(URL);
+    const data = await response.json();
+    return data;
+  }
+
+  const res = fetchAPI("http://localhost:3000/listarDados")
+  console.log(res);
+
 
   return (
     <>

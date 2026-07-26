@@ -10,7 +10,11 @@ APP.use(cors({
 }));
 
 APP.get('/listarDados', (req, res) => {
-    res.json(dados);
+    try{
+        res.json(dados);
+    }catch(error){
+        console.error("Erro:", error)
+    }
 });
 APP.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

@@ -12,8 +12,8 @@ APP.use(cors({
 APP.get('/listarDados', (req, res) => {
     try{
         res.json(dados);
-    }catch(error){
-        console.error("Erro:", error)
+    } catch(error) {
+        console.log("Erro:", error)
     }
 });
 APP.listen(PORT, () => {

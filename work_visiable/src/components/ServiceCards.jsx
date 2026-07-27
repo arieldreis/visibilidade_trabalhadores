@@ -1,4 +1,12 @@
-function ServiceCards({ item }) {
+import {
+  MapPin, Search, LayoutGrid, Wrench,
+  Sparkles, Zap, PaintBucket, Cookie,
+  Scissors, Leaf, HardHat, Hand,
+  HeartHandshake, BookOpen, Camera, MoreHorizontal, MessageCircle,
+  Home,
+} from "lucide-react";
+
+const ServiceCards = ({ item }) => {
   const Icon = categoryIcon(item.categoria);
   const priceLabel = formatPrice(item.precoMin, item.precoMax);
   const waLink = item.whatsapp

@@ -6,10 +6,12 @@ const NotFound = () => {
   return (
     <div className="notfound-page">
           <header className="notfound-header">
-            <div className="notfound-header__brand">
-              <span className="notfound-header__logo">🧰</span>
-              <span className="notfound-header__name">TalentoLocal</span>
-            </div>
+            <Link to="/Home">
+              <div className="notfound-header__brand">
+                <span className="notfound-header__logo">🧰</span>
+                <span className="notfound-header__name">TalentoLocal</span>
+              </div>
+            </Link>
           </header>
     
           <main className="notfound-main">
@@ -22,7 +24,7 @@ const NotFound = () => {
               </p>
     
               <div className="notfound-actions">
-                <Link to="/" className="notfound-btn notfound-btn--primary">
+                <Link to="/Home" className="notfound-btn notfound-btn--primary">
                   Voltar para o início
                 </Link>
                 <Link to="/MyServices" className="notfound-btn notfound-btn--ghost">

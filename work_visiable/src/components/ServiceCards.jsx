@@ -62,4 +62,4 @@ const ServiceCards = ({ item }) => {
   );
 }
 
-export default ServiceCards
+export default ServiceCards;

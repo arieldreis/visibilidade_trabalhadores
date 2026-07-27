@@ -8,7 +8,9 @@ export const dados = [
         preco: 0.00, 
         cidade: "São Paulo", 
         estado: "SP", 
-        descricao: "Profissional com 10 anos de experiência em reparos hidráulicos. Atendo residências e..."
+        descricao: "Profissional com 10 anos de experiência em reparos hidráulicos. Atendo residências e...",
+        precoMin: 50,
+        precoMax: 200,
     },
     {
         id: 2, 
@@ -19,7 +21,9 @@ export const dados = [
         preco: 0.00, 
         cidade: "Rio de Janeiro", 
         estado: "RJ", 
-        descricao: "Limpeza profunda, organização e passadoria. Trabalho com dedicação e"
+        descricao: "Limpeza profunda, organização e passadoria. Trabalho com dedicação e",
+        precoMin: 50,
+        precoMax: 100,
     },
     {
         id: 3, 
@@ -30,7 +34,9 @@ export const dados = [
         preco: 0.00, 
         cidade: "Minas Gerais", 
         estado: "MG", 
-        descricao: "Bolos personalizados para aniversários, casamentos e eventos. Diversos sabores e"
+        descricao: "Bolos personalizados para aniversários, casamentos e eventos. Diversos sabores e",
+        precoMin: 50,
+        precoMax: 200,
     },
     {
         id: 4, 
@@ -41,7 +47,9 @@ export const dados = [
         preco: 0.00, 
         cidade: "Curitiba", 
         estado: "PR", 
-        descricao: "Eletricista certificado. Instalação de tomadas, chuveiros, disjuntores, iluminação"
+        descricao: "Eletricista certificado. Instalação de tomadas, chuveiros, disjuntores, iluminação",
+        precoMin: 50,
+        precoMax: 200,
     },
     {
         id: 5, 
@@ -52,7 +60,9 @@ export const dados = [
         preco: 0.00, 
         cidade: "Salvador", 
         estado: "BA", 
-        descricao: "Pintura interna e externa com acabamento profissional. Trabalho com tintas de primeir"
+        descricao: "Pintura interna e externa com acabamento profissional. Trabalho com tintas de primeir",
+        precoMin: 50,
+        precoMax: 200,
     },
     {
         id: 6, 
@@ -63,6 +73,8 @@ export const dados = [
         preco: 0.00, 
         cidade: "Porto Alegre", 
         estado: "RS", 
-        descricao: "Professor formado em matemática. Aulas para ensino fundamental, médio e pré-escola"
+        descricao: "Professor formado em matemática. Aulas para ensino fundamental, médio e pré-escola",
+        precoMin: 50,
+        precoMax: 200,
     },
 ];

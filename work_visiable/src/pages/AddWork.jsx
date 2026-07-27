@@ -1,5 +1,6 @@
-import React from 'react'
 import '../styles/index.css'
+import Header from '../components/Header';
+import { useState } from 'react';
 
 const CATEGORIAS = [
   'Reformas e Reparos',
@@ -44,27 +45,7 @@ const AddWork = () => {
     };
   return (
     <div className="anunciar-page">
-      <header className="anunciar-header">
-        <div className="anunciar-header__brand">
-          <span className="anunciar-header__logo">🧰</span>
-          <span className="anunciar-header__name">TalentoLocal</span>
-        </div>
-        <nav className="anunciar-header__nav">
-          <button type="button" className="anunciar-header__link">
-            <span aria-hidden="true">🔍</span> Explorar
-          </button>
-          <button type="button" className="anunciar-header__link">
-            <span aria-hidden="true">💼</span> Meus Serviços
-          </button>
-          <button type="button" className="anunciar-header__cta">
-            + Anunciar
-          </button>
-          <button type="button" className="anunciar-header__avatar" aria-label="Minha conta">
-            👤
-          </button>
-        </nav>
-      </header>
-
+      <Header />
       <main className="anunciar-main">
         <form className="anunciar-card" onSubmit={handleSubmit}>
           <div className="anunciar-card__title">

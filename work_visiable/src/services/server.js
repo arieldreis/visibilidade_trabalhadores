@@ -1,5 +1,5 @@
 import express from 'express'
-import { dados } from '../back_end/teste.js'
+import { dados } from './teste.js'
 import cors from 'cors'
 
 const APP = express();

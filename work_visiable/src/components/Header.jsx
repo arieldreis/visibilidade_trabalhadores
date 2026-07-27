@@ -1,20 +1,40 @@
 import React from 'react'
-import { Handshake, Menu } from 'lucide-react'
+import { Handshake, Menu, Search, LayoutGrid } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-      <header className="header">
-        <div className="header-inner">
-          <div className="brand">
-            <div className="brand-icon">
-              <Handshake className="brand-icon-svg" />
-            </div>
-            <span className="brand-name">TalentoLocal</span>
+      <header className="anunciar-header">
+        <Link to="/Home">
+          <div className="anunciar-header__brand">
+            <span className="anunciar-header__logo" style={{ padding: '5px' }}>
+              <Handshake />
+            </span>
+            <span className="anunciar-header__name">TalentoLocal</span>
           </div>
-          <button aria-label="Abrir menu" className="menu-btn">
-            <Menu className="menu-icon" />
+        </Link>
+        <nav className="anunciar-header__nav">
+          <button type="button" className="anunciar-header__link">
+            <span aria-hidden="true">
+              <Search />
+            </span> 
+            Explorar
           </button>
-        </div>
+          <button type="button" className="anunciar-header__link">
+            <span aria-hidden="true">
+              < LayoutGrid />
+            </span> 
+            Meus Serviços
+          </button>
+          <Link to="/AddWork">
+            <button type="button" className="anunciar-header__cta">
+              + Anunciar
+            </button>
+          </Link>
+          <button type="button" className="anunciar-header__avatar" aria-label="Minha conta">
+            👤
+          </button>
+        </nav>
       </header>
   )
 }

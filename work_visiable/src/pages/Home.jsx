@@ -7,8 +7,9 @@ import {
   Sparkles, Zap, PaintBucket, Cookie,
   Scissors, Leaf, HardHat, Hand,
   HeartHandshake, BookOpen, Camera, MoreHorizontal, MessageCircle,
-  Home,
+  Home as HomeIcon,
 } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const CATEGORIES = [
   { key: "Todos", label: "Todos", icon: LayoutGrid },
@@ -32,18 +33,34 @@ const Home = () => {
     CATEGORIES.find((c) => c.key === categoria)?.icon || MoreHorizontal;
   }
 
-  // Dados estáticos apenas para montar o layout. Isso será substituído pelo
-  // retorno de fetch("http://localhost:3000/listarDados") na próxima etapa.
-
   function formatPrice(min, max) {
     if (min == null && max == null) return "Sob consulta";
     if (min != null && max != null) return `R$ ${min} - R$ ${max}`;
     return `R$ ${min ?? max}`;
   }
 
-    function initials(name = "") {
-      return name.trim().charAt(0).toUpperCase() || "?";
-    }
+  function initials(name = "") {
+    return name.trim().charAt(0).toUpperCase() || "?";
+  }
+
+  const [LISTINGS, setLISTINGS] = useState([]);
+  console.log(LISTINGS)
+  useEffect(() => {
+    const endPoint = "http://localhost:3000/listarDados";
+    // requisição http
+    const reqAPI = (url) => {
+      fetch(url).
+      then((response) => response.json()).
+      then((users) => {
+        const dataArray = Array.isArray(users) ? users : Object.values(users);
+        setLISTINGS(users)
+      }).catch((error) => {
+        console.log("Erro na busca de dados da api: ", error);
+      })
+    };
+
+    reqAPI(endPoint);
+  }, []);
 
   return (
     <>
@@ -104,4 +121,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;

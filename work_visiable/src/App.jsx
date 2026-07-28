@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx';
 import MyServices from './pages/MyServices.jsx';
 import NotFound from './pages/NotFound.jsx';
 import AddWork from './pages/AddWork.jsx'
+import MyPerfil from './pages/MyPerfil.jsx';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route path='/Home' element={ <Home /> }/>
           <Route path='/MyServices' element={ <MyServices /> }/>
           <Route path='/AddWork' element={ <AddWork /> } />
+          <Route path='/MyPerfil' element={ <MyPerfil /> }/>
       </Routes> 
     </BrowserRouter>
     </>

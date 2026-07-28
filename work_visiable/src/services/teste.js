@@ -16,7 +16,7 @@ export const dados = [
         title_service: "Faxina residencial completa", 
         nome: "Maria Oliveira", 
         categoria: "Diarista", 
-        telefone: "+55 21 98877-6655", 
+        telefone: "+55 11 96728-2605", 
         cidade: "Rio de Janeiro", 
         estado: "RJ", 
         descricao: "Limpeza profunda, organização e passadoria. Trabalho com dedicação e",

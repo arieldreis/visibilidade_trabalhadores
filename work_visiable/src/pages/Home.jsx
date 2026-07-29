@@ -4,10 +4,11 @@ import ServiceCards from "../components/ServiceCards.jsx";
 import Categories from "../components/Categories.jsx";
 import { MapPin, Search }  from "lucide-react";
 import { useEffect, useState } from "react";
-const Home = () => {
+const Home = ({}) => {
 
   const [LISTINGS, setLISTINGS] = useState([]);
   const [userInput, setUserInput] = useState("");
+  const [icontAction, seticontAction] = useState("");
 
   useEffect(() => {
     const endPoint = "http://localhost:3000/listarDados";
@@ -30,9 +31,15 @@ const Home = () => {
     setUserInput(e.target.value);
   }
 
+  function buttonActionCategories(keyCategory){
+    seticontAction(keyCategory)
+  }
+
   const filterDatas = LISTINGS.filter((LISTING) => {
     return LISTING.categoria.startsWith(userInput)
   });
+
+  console.log(`Teste: ${icontAction}`)
 
   return (
     <>
@@ -66,7 +73,7 @@ const Home = () => {
         </div>
       </section>
       {/* Filtros de categoria (apenas visual por enquanto) */}
-      <Categories />
+      <Categories icontAction={ buttonActionCategories }/>
       {/* Listagem */}
       <main className="listings">
         <div className="listings-grid">

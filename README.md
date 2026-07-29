@@ -8,6 +8,8 @@ O desenvolvimento deste projeto surgiu através de um desafio feito pelo meu pre
 
 Além da versão web, futuramente o projeto poderá ser transformado em um aplicativo mobile.
 
+Esse projeto está sendo desenvolvido para entregar para a associação da Igreja de Jesus Cristo dos Santos dos Últimos Dias.
+
 ---
 
 ## 🚀 Tecnologias

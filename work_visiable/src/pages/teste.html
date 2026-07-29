@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+      }
+      .box {
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 20px;
+        width: 400px;
+      }
+      h1 {
+        font-size: 18px;
+        margin-top: 0;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+      }
+      button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+      #resposta {
+        margin-top: 15px;
+        white-space: pre-wrap;
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Teste de Input AI</h1>
+      <input type="text" id="pergunta" placeholder="Digite sua pergunta..." />
+      <button onclick="perguntar()">Enviar</button>
+      <div id="resposta"></div>
+    </div>
+    <script>
+      const frutas = [
+        { key: "Maça" },
+        { key: "Banana" },
+        { key: "Abacaxi" },
+        { key: "Limão" },
+        { key: "Pera" },
+        { key: "Melância" },
+        { key: "Melão" },
+        { key: "Uva" },
+        { key: "Morango" },
+        { key: "Laranja" },
+        { key: "Uva" },
+        { key: "Morango" },
+        { key: "Banana" },
+        { key: "Abacaxi" }
+      ];
+      function perguntar(){
+        const question = document.getElementById('pergunta').value;
+        const resposta = document.getElementById('resposta');
+        const filtro = frutas.filter((fruta) => fruta.key.startsWith(question));
+        console.log(filtro);
+
+        resposta.innerHTML = `${question}`; 
+      }
+    </script>
+  </body>
+</html>

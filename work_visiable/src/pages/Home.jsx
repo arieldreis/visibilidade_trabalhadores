@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 const Home = () => {
 
   const [LISTINGS, setLISTINGS] = useState([]);
+  const [userInput, setUserInput] = useState("");
 
-  console.log(LISTINGS);
   useEffect(() => {
     const endPoint = "http://localhost:3000/listarDados";
     const reqAPI = (url) => {
@@ -24,6 +24,15 @@ const Home = () => {
 
     reqAPI(endPoint);
   }, []);
+
+  {/* Filtro de Busca */}
+  function inputBusca(e){
+    setUserInput(e.target.value);
+  }
+
+  const filterDatas = LISTINGS.filter((LISTING) => {
+    return LISTING.categoria.startsWith(userInput)
+  });
 
   return (
     <>
@@ -48,8 +57,10 @@ const Home = () => {
             <Search className="search-icon" />
             <input
               type="text"
-              placeholder="Buscar serviços, profissionais ou cidades..."
+              placeholder="Buscar serviços ou cidades..."
               className="search-input"
+              onChange={ inputBusca }
+              value={ userInput }
             />
           </div>
         </div>
@@ -59,7 +70,7 @@ const Home = () => {
       {/* Listagem */}
       <main className="listings">
         <div className="listings-grid">
-          {LISTINGS.map((item) => (
+          {filterDatas.map((item) => (
             <ServiceCards key={item.id} items={item} />
           ))}
         </div>

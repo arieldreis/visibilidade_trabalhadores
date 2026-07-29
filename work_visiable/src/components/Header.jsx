@@ -10,7 +10,7 @@ const Header = () => {
             <span className="anunciar-header__logo" style={{ padding: '5px' }}>
               <Handshake />
             </span>
-            <span className="anunciar-header__name">TalentoLocal</span>
+            <span className="anunciar-header__name">Conecta Fácil</span>
           </div>
         </Link>
         <nav className="anunciar-header__nav">

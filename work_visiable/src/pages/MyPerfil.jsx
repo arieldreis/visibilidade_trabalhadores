@@ -6,25 +6,25 @@ const MyPerfil = () => {
   return (
     <>
       <Header />
-      <div class="perfil-page">
-        <div class="perfil-card">
-          <div class="perfil-card__header">
-            <div class="perfil-avatar">A</div>
+      <div className="perfil-page">
+        <div className="perfil-card">
+          <div className="perfil-card__header">
+            <div className="perfil-avatar">A</div>
             <div>
               <h1>Meu Perfil</h1>
-              <p class="perfil-email">arieldreis@gmail.com</p>
+              <p className="perfil-email">arieldreis@gmail.com</p>
             </div>
           </div>
 
-          <form class="perfil-form">
-            <div class="perfil-field">
-              <label for="nome">Nome</label>
+          <form className="perfil-form">
+            <div className="perfil-field">
+              <label htmlFor="nome">Nome</label>
               <input id="nome" type="text" value="Ariel Marinho" disabled />
-              <span class="perfil-hint">O nome não pode ser alterado aqui</span>
+              <span className="perfil-hint">O nome não pode ser alterado aqui</span>
             </div>
 
-            <div class="perfil-field">
-              <label for="email">E-mail</label>
+            <div className="perfil-field">
+              <label htmlFor="email">E-mail</label>
               <input
                 id="email"
                 type="email"
@@ -33,13 +33,13 @@ const MyPerfil = () => {
               />
             </div>
 
-            <div class="perfil-field">
-              <label for="telefone">Telefone / WhatsApp</label>
+            <div className="perfil-field">
+              <label htmlFor="telefone">Telefone / WhatsApp</label>
               <input id="telefone" type="tel" placeholder="Ex: 11999999999" />
             </div>
 
-            <div class="perfil-field">
-              <label for="sobre">Sobre mim</label>
+            <div className="perfil-field">
+              <label htmlFor="sobre">Sobre mim</label>
               <input
                 id="sobre"
                 type="text"
@@ -47,8 +47,8 @@ const MyPerfil = () => {
               />
             </div>
 
-            <button type="submit" class="perfil-submit">
-              <span class="perfil-submit__icon" aria-hidden="true">
+            <button type="submit" className="perfil-submit">
+              <span className="perfil-submit__icon" aria-hidden="true">
                 💾
               </span>
               Salvar Alterações

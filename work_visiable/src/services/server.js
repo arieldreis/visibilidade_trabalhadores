@@ -6,7 +6,7 @@ const APP = express();
 const PORT = 3000;
 
 APP.use(cors({
-    origin: "http://localhost:5173"
+    origin: "http://localhost:5174"
 }));
 
 APP.get('/listarDados', (req, res) => {

@@ -1,13 +1,13 @@
 import React from "react";
 import { CATEGORIES } from "../services/servicesCategories.js";
 
-const Categories = ({ icontAction }) => {
+const Categories = ({ icontAction, iconTitle }) => {
   return (
     <>
       <section className="categories">
         <div className="categories-list">
           {CATEGORIES.map(({ key, label, icon: Icon }) => {
-            const active = key === "Todos"
+            const active = key === `${iconTitle}`
             return (
               <button
                 key={key}

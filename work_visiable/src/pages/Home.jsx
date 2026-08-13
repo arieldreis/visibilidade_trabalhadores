@@ -8,7 +8,7 @@ const Home = ({}) => {
 
   const [LISTINGS, setLISTINGS] = useState([]);
   const [userInput, setUserInput] = useState("");
-  const [icontAction, seticontAction] = useState("");
+  const [iconTitle, seticonTitle] = useState("");
 
   useEffect(() => {
     const endPoint = "http://localhost:3000/listarDados";
@@ -32,14 +32,20 @@ const Home = ({}) => {
   }
 
   function buttonActionCategories(keyCategory){
-    seticontAction(keyCategory)
+    seticonTitle(keyCategory)
   }
 
   const filterDatas = LISTINGS.filter((LISTING) => {
-    return LISTING.categoria.startsWith(userInput)
+    if(LISTING === "Todos"){
+      return LISTING.categoria
+    } else {
+      return LISTING.categoria.startsWith(userInput);
+      return LISTING.categoria.icontAction
+    }
+
   });
 
-  console.log(`Teste: ${icontAction}`)
+  console.log(`Teste: ${iconTitle}`)
 
   return (
     <>
@@ -73,7 +79,7 @@ const Home = ({}) => {
         </div>
       </section>
       {/* Filtros de categoria (apenas visual por enquanto) */}
-      <Categories icontAction={ buttonActionCategories }/>
+      <Categories icontAction={ buttonActionCategories } iconTitle={ iconTitle }/>
       {/* Listagem */}
       <main className="listings">
         <div className="listings-grid">

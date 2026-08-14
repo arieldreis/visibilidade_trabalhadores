@@ -35,17 +35,34 @@ const Home = ({}) => {
     seticonTitle(keyCategory)
   }
 
-  const filterDatas = LISTINGS.filter((LISTING) => {
-    if(LISTING === "Todos"){
-      return LISTING.categoria
-    } else {
-      return LISTING.categoria.startsWith(userInput);
-      return LISTING.categoria.icontAction
-    }
+  const filterDatas = LISTINGS.filter((listing) => {
+
+    const matchSearch = listing.categoria
+      .toLowerCase()
+      .startsWith(userInput.toLowerCase().trim());
+    
+  if (!listing.categoria) return false;
+
+  if (iconTitle === "Todos" || userInput === "Todos") {
+    return true;
+  }
+
+  if (userInput && userInput.trim() !== "") {
+    return matchSearch;
+  }
+
+  if (iconTitle) {
+    return listing.categoria === iconTitle;
+  }
+
+  if(userInput && iconTitle){
+    return matchSearch || iconTitle;
+  }
+
+  // Se nenhum filtro estiver ativo, mostra tudo
+  return true;
 
   });
-
-  console.log(`Teste: ${iconTitle}`)
 
   return (
     <>

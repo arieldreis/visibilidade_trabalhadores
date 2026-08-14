@@ -83,16 +83,19 @@ const Home = ({}) => {
             profissionais na sua região. Contrate direto pelo WhatsApp.
           </p>
 
-          <div className="search-wrap">
-            <Search className="search-icon" />
-            <input
-              type="text"
-              placeholder="Buscar serviços ou cidades..."
-              className="search-input"
-              onChange={ inputBusca }
-              value={ userInput }
-            />
-          </div>
+            <div className="search-wrap">
+              <Search className="search-icon" />
+              <input
+                type="text"
+                placeholder="Buscar serviços ou cidades..."
+                className="search-input"
+                onChange={ inputBusca }
+                value={ userInput }
+              />
+            </div>
+            <div className="SearchButton_Container">
+                <button>Pesquisar</button>
+            </div>
         </div>
       </section>
       {/* Filtros de categoria (apenas visual por enquanto) */}

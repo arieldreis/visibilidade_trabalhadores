@@ -135,6 +135,27 @@
   margin-right: auto;
 }
 
+.SearchButton_Container{
+  margin-top: 20px;
+}
+
+.SearchButton_Container button{
+  background: var(--tl-purple);
+  color: var(--tl-white);
+  font-weight: bolder;
+  font-size: 1em;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  width: 80%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.SearchButton_Container button:hover{
+  background: var(--tl-purple-dark);
+}
+
 .search-icon {
   position: absolute;
   left: 1rem;

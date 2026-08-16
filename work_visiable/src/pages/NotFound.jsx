@@ -9,7 +9,7 @@ const NotFound = () => {
             <Link to="/Home">
               <div className="notfound-header__brand">
                 <span className="notfound-header__logo">🧰</span>
-                <span className="notfound-header__name">TalentoLocal</span>
+                <span className="notfound-header__name">Easy Connect</span>
               </div>
             </Link>
           </header>

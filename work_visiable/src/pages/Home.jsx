@@ -42,13 +42,18 @@ const Home = ({}) => {
   function showType(){
     setResultado(userInput);
     setUserInput(""); // Limpa o que foi escrito no input
-    seticonTitle("");
+    seticonTitle(""); 
   }
 
   const filterDatas = LISTINGS.filter((listing) => {
 
+    {/* matchSearch filtra pela categoria */}
     const matchSearch = listing.categoria
       .toLowerCase()
+      .startsWith(resultado.toLowerCase().trim());
+
+    {/* Filtra pela cidade */}
+    const matchCity = listing.cidade.toLowerCase()
       .startsWith(resultado.toLowerCase().trim());
     
   if (!listing.categoria) return false;
@@ -58,7 +63,7 @@ const Home = ({}) => {
   }
 
   if (resultado && resultado.trim() !== "") {
-    return matchSearch;
+    return matchSearch || matchCity;
   }
 
   if (iconTitle) {

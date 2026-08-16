@@ -8,6 +8,7 @@ const Home = ({}) => {
 
   const [LISTINGS, setLISTINGS] = useState([]);
   const [userInput, setUserInput] = useState("");
+  const [resultado, setResultado] = useState("");
   const [iconTitle, seticonTitle] = useState("");
 
   useEffect(() => {
@@ -27,27 +28,36 @@ const Home = ({}) => {
   }, []);
 
   {/* Filtro de Busca */}
-  function inputBusca(e){
-    setUserInput(e.target.value);
-  }
 
   function buttonActionCategories(keyCategory){
-    seticonTitle(keyCategory)
+    seticonTitle(keyCategory);
+    setUserInput("");
+    setResultado("");
+  }
+
+  function readInput(e){
+    setUserInput(e.target.value); // onde guarda o que foi escrito no input
+  }
+
+  function showType(){
+    setResultado(userInput);
+    setUserInput(""); // Limpa o que foi escrito no input
+    seticonTitle("");
   }
 
   const filterDatas = LISTINGS.filter((listing) => {
 
     const matchSearch = listing.categoria
       .toLowerCase()
-      .startsWith(userInput.toLowerCase().trim());
+      .startsWith(resultado.toLowerCase().trim());
     
   if (!listing.categoria) return false;
 
-  if (iconTitle === "Todos" || userInput === "Todos") {
+  if (iconTitle === "Todos" || resultado === "Todos") {
     return true;
   }
 
-  if (userInput && userInput.trim() !== "") {
+  if (resultado && resultado.trim() !== "") {
     return matchSearch;
   }
 
@@ -55,7 +65,7 @@ const Home = ({}) => {
     return listing.categoria === iconTitle;
   }
 
-  if(userInput && iconTitle){
+  if(resultado && iconTitle){
     return matchSearch || iconTitle;
   }
 
@@ -63,6 +73,7 @@ const Home = ({}) => {
   return true;
 
   });
+  console.log(resultado);
 
   return (
     <>
@@ -89,13 +100,13 @@ const Home = ({}) => {
                 type="text"
                 placeholder="Buscar serviços ou cidades..."
                 className="search-input"
-                onChange={ inputBusca }
                 value={ userInput }
+                onChange={ readInput }
               />
             </div>
             <div className="SearchButton_Container">
-                <button>Pesquisar</button>
-            </div>
+                <button onClick={ showType }>Pesquisar</button>
+            </div> 
         </div>
       </section>
       {/* Filtros de categoria (apenas visual por enquanto) */}

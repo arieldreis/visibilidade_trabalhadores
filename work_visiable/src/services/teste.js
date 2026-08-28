@@ -1,3 +1,3 @@
 import { supabase } from "./dbConnection";
 
-const 
+const teste = "Hi!"

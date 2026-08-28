@@ -8,12 +8,8 @@ import {
   Sparkles,
   Paintbrush,
   GraduationCap,
-  ShoppingBag,
-  Search,
-  MapPin,
-  Pencil,
-  Trash2
 } from 'lucide-react';
+import ServiceCard from '../components/ServiceCard';
 
 const MyServices = () => {
   const servicos = [
@@ -75,34 +71,7 @@ const MyServices = () => {
 
         <div className="services-list">
           {servicos.map((item, index) => (
-            <div key={index} className="service-card">
-              <div className="service-card-left">
-                <div className="service-icon-box">
-                  {item.icon}
-                </div>
-                <div className="service-info">
-                  <h3>{item.title}</h3>
-                  <div className="service-meta">
-                    <span className="badge">{item.tag}</span>
-                    <span className="price">{item.price}</span>
-                    <span className="location">
-                      <MapPin size={14} strokeWidth={2} />
-                      {item.location}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="service-actions">
-                <button className="btn-edit">
-                  <Pencil size={16} strokeWidth={2} />
-                  Editar
-                </button>
-                <button className="btn-delete">
-                  <Trash2 size={16} color="#ef4444" strokeWidth={2} />
-                </button>
-              </div>
-            </div>
+            <ServiceCard items={item} key={index} indexs={index}/>
           ))}
         </div>
       </main>

@@ -27,6 +27,13 @@ const Register = () => {
 
         <form onSubmit={(e) => e.preventDefault()}>
           <div className="form-group">
+            <label>Nome Completo</label>
+            <div className="input-wrapper">
+              <Mail className="input-icon" size={18} strokeWidth={2} />
+              <input type="text" placeholder="Carlos Silva Mendes" />
+            </div>
+          </div>
+          <div className="form-group">
             <label>Email</label>
             <div className="input-wrapper">
               <Mail className="input-icon" size={18} strokeWidth={2} />

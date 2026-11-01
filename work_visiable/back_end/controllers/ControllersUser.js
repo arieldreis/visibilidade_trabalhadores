@@ -2,13 +2,16 @@ import express from 'express';
 import bcrypt from 'bcrypt'; 
 import { connection as db } from '../config/connection.js';
 
-export const getAll = async (req, res, NameTable) => {
+export const getAll = async (req, res) => {
     try{
-        const { rows : data } = await db.from(NameTable).select("*");
-        if(data){
-            return res.json(data);
+        const { data, error } = await db.from("RegisterUser").select("*");
+        if( error ){
+            console.error("Erro de acesso aos dados: ", error.message);
+        } else {
+            console.log( data );
+            return res.status(200).json(data);
         }
-    } catch ( error ){
+    } catch ( error ) {
         console.error("Erro ao realizar a requisição: ", error);
         res.status(500).json({
             status: 500,
@@ -20,6 +23,3 @@ export const getById = (req, res) => {};
 export const create = (req, res) => {};
 export const update = (req, res) => {};
 export const remove = (req, res) => {};
-
-// Calling the functions
-getAll("RegisterUser");

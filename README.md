@@ -1,62 +1,100 @@
-# 💼 Service Hub Platform
+# Visibilidade de Trabalhadores
 
-Este projeto tem como objetivo criar uma plataforma onde pessoas possam divulgar seus serviços, habilidades e trabalhos de forma simples e acessível.
+Plataforma web para divulgar serviços e conectar profissionais a pessoas que procuram soluções para o dia a dia. O projeto busca tornar a descoberta de prestadores mais simples, com uma experiência acessível e organizada.
 
-A proposta é permitir que profissionais apresentem aquilo que sabem fazer para que outras pessoas possam encontrá-los e entrar em contato facilmente.
+## Sobre o projeto
 
-O desenvolvimento deste projeto surgiu através de um desafio feito pelo meu presidente de estaca, o que me motivou a transformar a ideia em uma plataforma moderna e funcional.
+A aplicação reúne funcionalidades para explorar serviços por categoria, consultar anúncios e oferecer uma área para que profissionais apresentem seu trabalho. O repositório também inclui uma API em desenvolvimento para integrar a aplicação ao Supabase.
 
-Além da versão web, futuramente o projeto poderá ser transformado em um aplicativo mobile.
+O projeto está em desenvolvimento e é destinado a apoiar a divulgação de serviços na comunidade da Igreja de Jesus Cristo dos Santos dos Últimos Dias.
 
-Esse projeto está sendo desenvolvido para entregar para a associação da Igreja de Jesus Cristo dos Santos dos Últimos Dias.
+## Funcionalidades
 
----
+- Exploração e pesquisa de serviços
+- Navegação por categorias profissionais
+- Páginas de cadastro e login
+- Criação e visualização de anúncios de serviços
+- Estrutura inicial de API com Express e conexão ao Supabase
 
-## 🚀 Tecnologias
+Alguns fluxos de autenticação e persistência de dados ainda estão em desenvolvimento.
 
-Atualmente o projeto está sendo desenvolvido com:
+## Tecnologias
 
-- React
-- Vite
-- JavaScript
-- CSS
+- React e Vite
+- JavaScript e CSS
+- React Router
+- Node.js e Express
+- Supabase
 
-Futuramente:
+## Executar localmente
 
-- Aplicativo mobile
-- Backend para gerenciamento de usuários e serviços
-- Banco de dados
+É necessário ter Node.js e npm instalados.
 
----
+1. Acesse a pasta da aplicação:
 
-## 🎯 Objetivos do Projeto
+   ```bash
+   cd work_visiable
+   ```
 
-- Permitir divulgação de serviços
-- Conectar pessoas e profissionais
-- Criar uma plataforma intuitiva e moderna
-- Facilitar contato entre clientes e prestadores
-- Melhorar minhas habilidades em desenvolvimento web
+2. Instale as dependências:
 
----
+   ```bash
+   npm install
+   ```
 
-## 📌 Funcionalidades Futuras
+3. Configure as variáveis de ambiente em `work_visiable/.env`:
 
-- Cadastro de usuários
-- Perfis profissionais
-- Sistema de contato
-- Upload de imagens
-- Pesquisa de serviços
-- Sistema de avaliações
-- Responsividade para dispositivos móveis
+   ```env
+   VITE_SUPABASE_URL=sua_url_do_supabase
+   VITE_SUPABASE_ANONKEY=sua_chave_anon_do_supabase
+   PORT=3000
+   ```
 
----
+   Use os valores do seu projeto Supabase. Não inclua chaves secretas ou `service_role` em código do navegador nem em arquivos versionados.
 
-## 🚧 Status do Projeto
+4. Em um terminal, inicie a interface:
 
-Em desenvolvimento.
+   ```bash
+   npm run dev
+   ```
 
----
+5. Em outro terminal, inicie a API:
 
-## 👨‍💻 Autor
+   ```bash
+   npm start
+   ```
 
-Desenvolvido por Ariel Marinho.
+A interface é servida pelo Vite (normalmente em `http://localhost:5173`) e a API usa a porta `3000` por padrão.
+
+## Scripts disponíveis
+
+| Comando | Descrição |
+| --- | --- |
+| `npm run dev` | Inicia o servidor de desenvolvimento do frontend |
+| `npm run build` | Gera a versão de produção do frontend |
+| `npm run preview` | Pré-visualiza a versão compilada |
+| `npm run lint` | Executa a análise estática do código |
+| `npm start` | Inicia o servidor Express |
+
+## Estrutura principal
+
+```text
+work_visiable/
+├── back_end/       # API, rotas, controllers e conexão com o Supabase
+├── src/
+│   ├── components/ # Componentes reutilizáveis
+│   ├── pages/      # Páginas da aplicação
+│   └── styles/     # Estilos
+└── package.json
+```
+
+## Próximos passos
+
+- Concluir os fluxos de autenticação e gerenciamento de serviços
+- Definir políticas de acesso e persistência no Supabase
+- Ampliar a validação e o tratamento de erros da API
+- Aprimorar a experiência em dispositivos móveis
+
+## Autor
+
+Ariel Marinho

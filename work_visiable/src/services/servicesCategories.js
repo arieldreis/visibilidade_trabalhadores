@@ -1,7 +1,6 @@
 import {
   LayoutGrid, Wrench, Sparkles, Zap, PaintBucket, Cookie, Scissors, 
-  Leaf, HardHat, Hand, HeartHandshake, BookOpen, Camera, MoreHorizontal,
-  MapPin, Icon, MessageCircle
+  Leaf, HardHat, Hand, HeartHandshake, BookOpen, Camera, MoreHorizontal
 } from "lucide-react";
 
 export const CATEGORIES = [

@@ -56,11 +56,15 @@
   font-size: 1.125rem;
 }
 
+.anunciar-header__engrenagem{
+  display: flex;
+}
+
 .menu-btn {
   height: 2.25rem;
   width: 2.25rem;
   border-radius: 0.5rem;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   color: #64748b; /* slate-500 */
@@ -78,6 +82,53 @@
   height: 1.25rem;
   width: 1.25rem;
 }
+
+
+/* ===== Responsividade Header ====== */
+@media (max-width: 660px) {
+    .menu-btn {
+      display: block;
+      padding: 5px;
+      color: black;
+      transition: 1s ease-in-out;
+    }
+    .menu-btn:hover{
+      background: rgb(109, 40, 217);
+      padding: 5px;
+    }
+    .anunciar-header__nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .anunciar-header__link {
+      padding: 10px 20px;
+      width: 100%;
+      text-align: center;
+    }
+    .anunciar-header__link:hover{
+      background: #ee9c04;
+      border-radius: 10px;
+    }
+    .container-responsive___allItems {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .container-inline___brand-menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+}
+
+
+
+
+
 
 /* ===== Hero ===== */
 .hero {
